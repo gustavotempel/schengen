@@ -52,15 +52,15 @@ class Item(models.Model):
         return f"{self.date}, {self.country}, {self.status}"
 
 
-class TouristStay(models.Model):
-    last_items = Item.objects.filter(date__gt=(datetime.today() - timedelta(days=TIMEFRAME))).order_by("date")
-    remaining_days = []
-
-    for item in last_items:
-        remaining_days.append(date.today() - item.date)
-
-    @property
-    def remaining_days(self):
-        return self.remaining_days
+# class TouristStay(models.Model):
+#     last_items = Item.objects.filter(date__gt=(datetime.today() - timedelta(days=TIMEFRAME))).order_by("date")
+#     remaining_days = []
+#
+#     for item in last_items:
+#         remaining_days.append(date.today() - item.date)
+#
+#     @property
+#     def remaining_days(self):
+#         return self.remaining_days
 
 

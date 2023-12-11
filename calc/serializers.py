@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from calc.models import Item, TouristStay
+from calc.models import Item  #, TouristStay
 
 
 class ItemSerializer(serializers.ModelSerializer):

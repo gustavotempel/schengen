@@ -17,7 +17,7 @@ class StayView(views.APIView):
     """
     def get(self, request, current_date=date.today()):
 
-        current_date = request.query_params["current_date"]
+        # current_date = request.query_params["current_date"]
 
         stays = Item.objects.all().order_by("date")
         serializer = ItemSerializer(stays, many=True)
